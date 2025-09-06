@@ -1,0 +1,13 @@
+{
+  "ciclo_cardio": "Calentamiento 5' + HIIT 15' + Enfriamiento 5'",
+  "semanal": {
+    "lunes": ["Cardio suave 30'"],
+    "martes": ["Fuerza tren superior"],
+    "miercoles": ["HIIT 20'"],
+    "jueves": ["Fuerza tren inferior"],
+    "viernes": ["Cardio moderado 40'"],
+    "sabado": ["Movilidad + core"],
+    "domingo": ["Descanso activo"]
+  },
+  "final_cardio": "5' caminata + estiramientos 10'"
+}
