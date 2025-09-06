@@ -62,7 +62,7 @@ function createExerciseItem(item) {
 
 (async function init() {
   // PERFIL
-  const profile = await loadJSON('/data/profile.json');
+  const profile = await loadJSON('profile.json');
   const pesoLS = localStorage.getItem('peso_actual');
   const pesoActual = pesoLS ? parseFloat(pesoLS) : profile.peso_actual;
   setText('peso-inicial', profile.peso_inicial);
@@ -94,12 +94,12 @@ function createExerciseItem(item) {
   });
 
   // PLAN
-  const plan = await loadJSON('/data/plan.json');
+  const plan = await loadJSON('plan.json');
   setText('plan-nombre', plan.nombre);
   renderList('plan-preparacion', plan.preparacion || []);
 
   // LAB
-  const lab = await loadJSON('/data/lab.json');
+  const lab = await loadJSON('lab.json');
   const labC = document.getElementById('lab-resultados');
   if (labC) {
     labC.innerHTML = '';
@@ -115,7 +115,7 @@ function createExerciseItem(item) {
   }
 
   // NUTRICIÓN
-  const nutrition = await loadJSON('/data/nutrition.json');
+  const nutrition = await loadJSON('nutrition.json');
   const comidasC = document.getElementById('comidas');
   if (comidasC) {
     comidasC.innerHTML = '';
@@ -136,7 +136,7 @@ function createExerciseItem(item) {
   setText('agua', nutrition.agua || '');
 
   // SUPLEMENTOS
-  const supp = await loadJSON('/data/supplements.json');
+  const supp = await loadJSON('supplements.json');
   const supC = document.getElementById('suplementos-list');
   if (supC) {
     supC.innerHTML = '';
@@ -163,7 +163,7 @@ function createExerciseItem(item) {
   }
 
   // RUTINAS (soporta arrays de strings u objetos)
-  const routines = await loadJSON('/data/routines.json');
+  const routines = await loadJSON('routines.json');
   setText('ciclo-cardio', routines.ciclo_cardio || '');
   const semanal = routines.semanal || {};
   const ruC = document.getElementById('rutina-semanal');
@@ -201,7 +201,8 @@ function createExerciseItem(item) {
   setText('final-cardio', routines.final_cardio || '');
 
   // TIPS
-  const tips = await loadJSON('/data/tips.json');
+  const tips = await loadJSON('tips.json');
   renderList('tips-alimentacion', tips.alimentacion || []);
   renderList('tips-acondicionamiento', tips.acondicionamiento || []);
 })();
+
