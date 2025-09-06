@@ -50,12 +50,12 @@ function renderList(containerId, items){
   });
 
   // PLAN
-  const plan = await loadJSON('/plan.json');
+  const plan = await loadJSON('plan.json');
   setText('plan-nombre', plan.nombre);
   renderList('plan-preparacion', plan.preparacion || []);
 
   // LAB
-  const lab = await loadJSON('/data/lab.json');
+  const lab = await loadJSON('lab.json');
   const labC = document.getElementById('lab-resultados');
   labC.innerHTML = '';
   (lab.resultados || []).forEach(r => {
@@ -68,7 +68,7 @@ function renderList(containerId, items){
   });
 
   // NUTRICIÓN
-  const nutrition = await loadJSON('/data/nutrition.json');
+  const nutrition = await loadJSON('nutrition.json');
   const comidasC = document.getElementById('comidas');
   comidasC.innerHTML = '';
   (nutrition.comidas || []).forEach(c => {
@@ -82,7 +82,7 @@ function renderList(containerId, items){
   document.getElementById('agua').textContent = nutrition.agua || '';
 
   // SUPLEMENTOS
-  const supp = await loadJSON('/data/supplements.json');
+  const supp = await loadJSON('supplements.json');
   const supC = document.getElementById('suplementos-list');
   supC.innerHTML = '';
   function block(titulo, arr){
@@ -102,7 +102,7 @@ function renderList(containerId, items){
   supC.appendChild(block('Post‑entreno', supp.post_entreno));
 
   // RUTINAS
-  const routines = await loadJSON('/data/routines.json');
+  const routines = await loadJSON('routines.json');
   document.getElementById('ciclo-cardio').textContent = routines.ciclo_cardio || '';
   const semanal = routines.semanal || {};
   const ruC = document.getElementById('rutina-semanal');
@@ -117,8 +117,9 @@ function renderList(containerId, items){
   document.getElementById('final-cardio').textContent = routines.final_cardio || '';
 
   // TIPS
-  const tips = await loadJSON('/data/tips.json');
+  const tips = await loadJSON('tips.json');
   renderList('tips-alimentacion', tips.alimentacion || []);
   renderList('tips-acondicionamiento', tips.acondicionamiento || []);
 })();
+
 
