@@ -23,7 +23,7 @@ function renderList(containerId, items){
 
 (async function init(){
   // PERFIL
-  const profile = await loadJSON('/data/profile.json');
+  const profile = await loadJSON('profile.json');
   const pesoLS = localStorage.getItem('peso_actual');
   const pesoActual = pesoLS ? parseFloat(pesoLS) : profile.peso_actual;
   setText('peso-inicial', profile.peso_inicial);
@@ -50,7 +50,7 @@ function renderList(containerId, items){
   });
 
   // PLAN
-  const plan = await loadJSON('/data/plan.json');
+  const plan = await loadJSON('/plan.json');
   setText('plan-nombre', plan.nombre);
   renderList('plan-preparacion', plan.preparacion || []);
 
@@ -121,3 +121,4 @@ function renderList(containerId, items){
   renderList('tips-alimentacion', tips.alimentacion || []);
   renderList('tips-acondicionamiento', tips.acondicionamiento || []);
 })();
+
