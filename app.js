@@ -50,12 +50,12 @@ function renderList(containerId, items){
   });
 
   // PLAN
-  const plan = await loadJSON('/data/plan.json');
+  const plan = await loadJSON('plan.json');
   setText('plan-nombre', plan.nombre);
   renderList('plan-preparacion', plan.preparacion || []);
 
   // LAB
-  const lab = await loadJSON('/data/lab.json');
+  const lab = await loadJSON('/lab.json');
   const labC = document.getElementById('lab-resultados');
   labC.innerHTML = '';
   (lab.resultados || []).forEach(r => {
@@ -121,4 +121,5 @@ function renderList(containerId, items){
   renderList('tips-alimentacion', tips.alimentacion || []);
   renderList('tips-acondicionamiento', tips.acondicionamiento || []);
 })();
+
 
